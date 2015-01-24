@@ -66,6 +66,7 @@ We will place files of this schema on our (imaginary) Hadoop file system (HDFS) 
 Things should™ work out of the box by doing:
 
     $ git clone this-repository && cd this-repository
+    Need to change pom.xml to match the version of Cassandra and Hadoop
     $ mvn package
     $ JAR=target/spotify-hdfs2cass-2.0-SNAPSHOT-jar-with-dependencies.jar
     $ CLASS=com.spotify.hdfs2cass.Hdfs2Cass
