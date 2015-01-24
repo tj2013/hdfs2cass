@@ -37,6 +37,25 @@ Next, we'll need some Avro files. Check out [this tutorial](http://avro.apache.o
      ]
     }
 
+http://www.michael-noll.com/blog/2013/03/17/reading-and-writing-avro-files-from-the-command-line/
+
+Command:
+
+JSON to binary Avro
+Without compression:
+
+$ java -jar ~/avro-tools-1.7.4.jar fromjson --schema-file twitter.avsc twitter.json > twitter.avro
+With Snappy compression:
+
+$ java -jar ~/avro-tools-1.7.4.jar fromjson --codec snappy --schema-file twitter.avsc twitter.json > twitter.snappy.avro
+
+Binary Avro to JSON
+The same command will work on both uncompressed and compressed data.
+
+$ java -jar ~/avro-tools-1.7.4.jar tojson twitter.avro > twitter.json
+$ java -jar ~/avro-tools-1.7.4.jar tojson twitter.snappy.avro > twitter.json
+
+
 We will place files of this schema on our (imaginary) Hadoop file system (HDFS) to a location
 
     hdfs:///example/path/songstreams
