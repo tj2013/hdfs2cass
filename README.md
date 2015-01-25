@@ -18,7 +18,6 @@ In that cluster, we create the following schema:
       'class': 'SimpleStrategy', 'replication_factor': '1'};
     CREATE TABLE example.songstreams (
       user_id text,
-      timestamp bigint,
       song_id text,
       PRIMARY KEY (user_id));
 
@@ -32,8 +31,7 @@ Next, we'll need some Avro files. Check out [this tutorial](http://avro.apache.o
      "name": "SongStream",
      "fields": [
          {"name": "user_id", "type": "string"},
-         {"name": "timestamp", "type": "int"},
-         {"name": "song_id", "type": "int"}
+         {"name": "song_id", "type": "string"}
      ]
     }
 
